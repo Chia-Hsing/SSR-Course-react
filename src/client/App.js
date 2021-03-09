@@ -1,7 +1,7 @@
 import React from 'react'
 import { renderRoutes } from 'react-router-config'
 import Header from './components/Header'
-import { fetchCurrentUsers } from './actions/index'
+import { fetchCurrentUser } from './actions'
 
 const App = ({ route }) => {
     return (
@@ -14,5 +14,5 @@ const App = ({ route }) => {
 
 export default {
     component: App,
-    loadDate: ({ dispatch }) => dispatch(fetchCurrentUsers()),
+    loadData: ({ dispatch }) => dispatch(fetchCurrentUser()),
 }
