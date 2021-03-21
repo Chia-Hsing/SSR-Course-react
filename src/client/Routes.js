@@ -6,15 +6,6 @@ import AdminsListPage from './pages/AdminsListPage'
 import PageNotFound from './pages/PageNotFound'
 import App from './App'
 
-// export default () => {
-//     return (
-//         <div>
-//             <Route exact path="/" component={Home} />
-//             <Route path="/users" component={UserList} />
-//         </div>
-//     )
-// }
-
 export default [
     {
         ...App,

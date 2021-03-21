@@ -17,7 +17,9 @@ app.use(
         },
     })
 )
+
 app.use(express.static('public'))
+
 app.get('*', (req, res) => {
     const store = createStore(req)
 
@@ -33,11 +35,13 @@ app.get('*', (req, res) => {
             }
         })
 
-    console.log(promises)
-
     Promise.all(promises).then(() => {
         const context = {}
         const content = renderer(req, store, context)
+
+        if (context.url) {
+            return res.redirect(301, context.url)
+        }
 
         if (context.notFound) {
             res.status(404)
